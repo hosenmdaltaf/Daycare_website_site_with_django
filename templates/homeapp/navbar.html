@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+  <!-- header start -->
+  <header>
+    <div class="header-area header-space pl-100 pr-100">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-xl-2 col-lg-2 col-6">
+                    <div class="logo">
+                        <a href="index.html"><img src="{% static 'img/logo/logo.png' %}" alt="logo_not_found"></a>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-7 d-none d-lg-block">
+                    <div class="main-menu">
+                        <nav id="mobile-menu">
+                            <ul class="menu">
+                                <li><a class="active" href="index.html">Home</a>
+                                    <!-- <ul class="submenu">
+                                        <li><a class="active" href="index.html">Home One</a></li>
+                                        <li><a href="index-2.html">Home Two</a></li>
+                                    </ul> -->
+                                </li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="classes.html">Classes</a>
+                                    <!-- <ul class="submenu">
+                                        <li><a href="classes.html">Classes</a></li>
+                                        <li><a href="class-details.html">Class Details</a></li>
+                                    </ul> -->
+                                </li>
+                                <li><a href="team.html">Team</a>
+                                    <!-- <ul class="submenu">
+                                        <li><a href="team.html">Team</a></li>
+                                        <li><a href="team-details.html">Team Details</a></li>
+                                    </ul> -->
+                                </li>
+                                <!-- <li><a href="#">Pages</a>
+                                    <ul class="submenu">
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="classes.html">Classes</a></li>
+                                        <li><a href="class-details.html">Class Details</a></li>
+                                        <li><a href="team.html">Team</a></li>
+                                        <li><a href="team-details.html">Team Details</a></li>
+                                        <li><a href="features.html">Features</a></li>
+                                        <li><a href="gallery.html">Gallery</a></li>
+                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="blog-details.html">Blog Details</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </li> -->
+                                <!-- <li><a href="blog.html">Blog</a>
+                                    <ul class="submenu">
+                                        <li><a href="blog.html">Blog</a></li>
+                                        <li><a href="blog-details.html">Blog Details</a></li>
+                                    </ul>
+                                </li> -->
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-3 col-6 d-flex align-items-center justify-content-end">
+                    <div class="header-right">
+                        <div class="header-btn f-right d-none d-lg-block">
+                            <a class="thm-btn thm-btn-2" href="#">admission now</a>
+                        </div>
+                        <div class="search-box f-right d-none d-xl-block">
+                            <form action="#">
+                                <input type="text" placeholder="Search...">
+                                <button type="submit"><i class="ti-search"></i></button>
+                            </form>
+                        </div>
+                        <div class="hamburger-menu d-lg-none">
+                            <a href="javascript:void(0);" class="">
+                                <i class="fas fa-bars"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header end -->
+
+
+
+
+
+
+        <!-- side-mobile-menu start -->
+        <nav class="side-mobile-menu">
+            <ul id="mobile-menu-active">
+                <li class="dropdown"><a href="index.html">Home</a>
+                    <ul class="sub-menu">
+                        <li><a href="index.html">Home One</a></li>
+                        <li><a href="index-2.html">Home Two</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown"><a href="classes.html">Classes</a>
+                    <ul class="sub-menu">
+                        <li><a href="classes.html">Classes</a></li>
+                        <li><a href="class-details.html">Class Details</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="team.html">Team</a>
+                    <ul class="sub-menu">
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="team-details.html">Team Details</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#">Pages</a>
+                    <ul class="sub-menu">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="classes.html">Classes</a></li>
+                        <li><a href="class-details.html">Class Details</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="team-details.html">Team Details</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="blog-details.html">Blog Details</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="blog.html">Blog</a>
+                    <ul class="sub-menu">
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="blog-details.html">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- side-mobile-menu end -->
+    </aside>
+    <div class="body-overlay"></div>
+    <!-- slide-bar end -->
+
+
+
+
+
+{% endblock %}
