@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+{% include 'homeapp/navbar.html' %}
+
+
+<main>
+    <!-- page title start -->
+    <!-- <section class="page-title-area gray-bg-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6">
+                    <div class="page-title">
+                        <h1><span>Cl</span><span>a</span><span>ss</span><span>es</span></h1>
+                        <div class="breadcrumb-wrapper">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a href="index.html">Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item active" aria-current="page">Classes</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-title-right d-none d-lg-block">
+                <img src="img/page-title/page-title-img.png" alt="image_not_found">
+            </div>
+        </div>
+    </section> -->
+    <!-- page title end -->
+
+    <!-- class start -->
+    <section class="class-area pt-120 pb-120">
+        <div class="container">
+            <div class="row">
+
+                
+            {% for class in classes %}
+
+
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="class-item mb-30 wow fadeInUp" data-wow-delay=".2s">
+                        <div class="class-thumb">
+                            <img src="{{class.image.url}}" alt="image_not_found">
+                        </div>
+                        <div class="class-text">
+                            <a href="class-details.html"><h3>{{class.title}}</h3></a>
+                            <span>Class time {{class.out}} </span>
+                            <p>{{class.content|truncatechars:200}}</p>
+                        </div>
+                        <ul class="schedule">
+                            <li>
+                                <span>Class Size</span>
+                                <span>45 - 50</span>
+                            </li>
+                            <li>
+                                <span>Years</span>
+                                <span>{{class.childagestart}}-{{class.childagefinish}}</span>
+                            </li>
+                            <li>
+                                <span>Tution Fee</span>
+                                <span>$120</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+              
+
+
+            {% endfor %}
+
+
+
+<!-- 
+                <div class="col-lg-4 col-md-6">
+                    <div class="class-item mb-30 wow fadeInUp" data-wow-delay=".2s">
+                        <div class="class-thumb">
+                            <img src="img/class/class-01.jpg" alt="image_not_found">
+                        </div>
+                        <div class="class-text">
+                            <a href="class-details.html"><h3>Athletic & Dance Classes</h3></a>
+                            <span>Class time 8:00 am - 10:00 am</span>
+                            <p>Rorem ipsum dolor sit amet, consectetu adipisicin elit, sed do eiusmotemp minimye.</p>
+                        </div>
+                        <ul class="schedule">
+                            <li>
+                                <span>Class Size</span>
+                                <span>45 - 50</span>
+                            </li>
+                            <li>
+                                <span>Years</span>
+                                <span>07 - 10</span>
+                            </li>
+                            <li>
+                                <span>Tution Fee</span>
+                                <span>$120</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+               -->
+
+
+
+
+
+
+
+
+
+
+
+
+              
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="view-class text-center mt-30 wow fadeInUp" data-wow-delay=".2s">
+                        <a class="thm-btn thm-btn-2" href="#">see load more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- class end -->
+
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+{% include 'homeapp/footer.html' %}
+
+
+{% endblock %}

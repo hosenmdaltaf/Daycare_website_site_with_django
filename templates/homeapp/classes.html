@@ -18,98 +18,96 @@
             </div>
             <div class="col-lg-6 col-md-4 col-sm-12 wow fadeInUp" data-wow-delay=".4s">
                 <div class="class-btn f-right">
-                    <a class="thm-btn thm-btn-2" href="class-details.html">See All Class</a>
+                    <a class="thm-btn thm-btn-2" href="{% url 'classes:classes' %}">See All Class</a>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="class-item mb-30 wow fadeInUp" data-wow-delay=".2s">
-                    <div class="class-thumb">
-                        <img src="{% static 'img/class/class-01.jpg' %}" alt="image_not_found">
-                    </div>
-                    <div class="class-text">
-                        <a href="class-details.html"><h3>Athletic & Dance Classes</h3></a>
-                        <span>Class time 8:00 am - 10:00 am</span>
-                        <p>Rorem ipsum dolor sit amet, consectetu adipisicin elit, sed do eiusmotemp minimye.</p>
-                    </div>
-                    <ul class="schedule">
-                        <li>
-                            <span>Class Size</span>
-                            <span>45 - 50</span>
-                        </li>
-                        <li>
-                            <span>Years</span>
-                            <span>07 - 10</span>
-                        </li>
-                        <li>
-                            <span>Tution Fee</span>
-                            <span>$120</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="class-item mb-30 wow fadeInUp" data-wow-delay=".4s">
-                    <div class="class-thumb">
-                        <img src="{% static 'img/class/class-02.jpg' %}" alt="image_not_found">
-                    </div>
-                    <div class="class-text">
-                        <a href="class-details.html"><h3>Super Faster Speking English</h3></a>
-                        <span>Class time 8:00 am - 10:00 am</span>
-                        <p>Rorem ipsum dolor sit amet, consectetu adipisicin elit, sed do eiusmotemp minimye.</p>
-                    </div>
-                    <ul class="schedule">
-                        <li>
-                            <span>Class Size</span>
-                            <span>45 - 50</span>
-                        </li>
-                        <li>
-                            <span>Years</span>
-                            <span>07 - 10</span>
-                        </li>
-                        <li>
-                            <span>Tution Fee</span>
-                            <span>$120</span>
-                        </li>
-                    </ul>
 
-                  
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="class-item mb-30 wow fadeInUp" data-wow-delay=".6s">
-                    <div class="class-thumb">
-                        <img src="{% static 'img/class/class-03.jpg' %}" alt="image_not_found">
+
+         
+         
+
+                         
+            {% for class in homeservices %}
+
+
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="class-item mb-30 wow fadeInUp" data-wow-delay=".2s">
+                        <div class="class-thumb">
+                            <img src="{{class.image.url}}" alt="image_not_found">
+                        </div>
+                        <div class="class-text">
+                            <a href="class-details.html"><h3>{{class.title}}</h3></a>
+                            <span>Class time {{class.out}} </span>
+                            <p>{{class.content|truncatechars:100}}</p>
+                        </div>
+                        <ul class="schedule">
+                            <li>
+                                <span>Class Size</span>
+                                <span>45 - 50</span>
+                            </li>
+                            <li>
+                                <span>Years</span>
+                                <span>{{class.childagestart}}-{{class.childagefinish}}</span>
+                            </li>
+                            <li>
+                                <span>Tution Fee</span>
+                                <span>$120</span>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="class-text">
-                        <a href="class-details.html"><h3>Free Class System Sunday</h3></a>
-                        <span>Class time 8:00 am - 10:00 am</span>
-                        <p>Rorem ipsum dolor sit amet, consectetu adipisicin elit, sed do eiusmotemp minimye.</p>
-                    </div>
-                    <ul class="schedule">
-                        <li>
-                            <span>Class Size</span>
-                            <span>45 - 50</span>
-                        </li>
-                        <li>
-                            <span>Years</span>
-                            <span>07 - 10</span>
-                        </li>
-                        <li>
-                            <span>Tution Fee</span>
-                            <span>$120</span>
-                        </li>
-                    </ul>
+
+                      <!-- Button trigger modal --> 
+                <div class="box"> 
+                    <button class="trigger">
+                        <a    href="#popup1">Let me Pop up</a>
+                    </button>
                 </div>
+                 <!-- Modal -->
+                <div id="popup1" class="overlay">
+                    <div class="popup">
+                        <h2>Please fillup the form</h2>
+                        <a class="close" href="#">&times;</a>
+                        <div class="content">
+                          
+                            <form action="" method="POST" enctype="multipart/form-data">  
+                                {% csrf_token %}    
+                                <input name="name" type="text" class="feedback-input" placeholder="Name" />
+                                <div class="dropdownbox ">
+                                    <select required name="Servicesname">
+                                      <option value='none'>Select one service</option>
+                                      {% for service in services %}
+                                      <option value='{{service.id}}'>{{service.title}}</option>
+                                      {% endfor %}
+                                    </select>
+                                  </div>
+                                <input required name="phonenumber" type="text" class="feedback-input" placeholder="write your phone number" />
+                                <textarea name="message" class="feedback-input" placeholder="write your query"></textarea>
+                                <input type="submit" value="SUBMIT"/>
+                              </form>
+
+                            </div> 
+
+
+                        </div>
+                    </div>
+
+                </div>
+              
+
+
+            {% endfor %}
+
+
+
+
             </div>
         </div>
     </div>
 </section>
 <!-- class end -->
-
-
-
 
 
 {% endblock %}

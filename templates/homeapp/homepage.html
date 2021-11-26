@@ -18,8 +18,8 @@
                             <h1 class="wow fadeInUp" data-wow-delay=".4s">BEST <span>SC</span><span>H</span><span>OO</span><span>L</span> FOR YOUR CHILDS</h1>
                             <p class="wow fadeInUp" data-wow-delay=".6s">Rorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                             <div class="banner-btn">
-                                <a class="thm-btn wow fadeInLeft" data-wow-delay=".8s" href="about.html">Learn More</a>
-                                <a class="thm-btn thm-btn-3 wow fadeInRight" data-wow-delay="1s" href="classes.html">Our Class</a>
+                                <a class="thm-btn wow fadeInLeft" data-wow-delay=".8s" href="{% url 'contactapp:about' %}">Learn More</a>
+                                <a class="thm-btn thm-btn-3 wow fadeInRight" data-wow-delay="1s" href="{% url 'classes:classes' %}">Our Class</a>
                             </div>
                         </div>
                     </div>
@@ -31,8 +31,8 @@
                             <div class="banner-icon">
                                 <img class="icon-1" src="{% static 'img/icon/bs-01.png' %}" alt="image_not_found">
                                 <img class="icon-2" src="{% static 'img/icon/bs-02.png' %}" alt="image_not_found">
-                                <img class="icon-3" src="img/icon/bs-03.png" alt="image_not_found">
-                                <img class="icon-4" src="img/icon/bs-04.png" alt="image_not_found">
+                                <!-- <img class="icon-3" src="img/icon/bs-03.png" alt="image_not_found">
+                                <img class="icon-4" src="img/icon/bs-04.png" alt="image_not_found"> -->
                             </div>
                         </div>
                     </div>
@@ -41,9 +41,11 @@
         </div>
     </section>
     <!-- banner end -->
+    
+    {% include 'homeapp/classes.html' %}
     {% include 'homeapp/aboutus.html' %}
     {% include 'homeapp/features.html' %}
-    {% include 'homeapp/classes.html' %}
+    
     {% include 'homeapp/footer.html' %}
 
 

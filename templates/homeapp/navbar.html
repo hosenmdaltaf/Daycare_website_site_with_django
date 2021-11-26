@@ -20,20 +20,20 @@
                     <div class="main-menu">
                         <nav id="mobile-menu">
                             <ul class="menu">
-                                <li><a class="active" href="index.html">Home</a>
+                                <li><a class="active" href="{% url 'homeapp:homepage' %}">Home</a>
                                     <!-- <ul class="submenu">
                                         <li><a class="active" href="index.html">Home One</a></li>
                                         <li><a href="index-2.html">Home Two</a></li>
                                     </ul> -->
                                 </li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="classes.html">Classes</a>
+                                <li><a href="{% url 'contactapp:about' %}">About</a></li>
+                                <li><a href="{% url 'classes:classes' %}">Classes</a>
                                     <!-- <ul class="submenu">
                                         <li><a href="classes.html">Classes</a></li>
                                         <li><a href="class-details.html">Class Details</a></li>
                                     </ul> -->
                                 </li>
-                                <li><a href="team.html">Team</a>
+                                <li><a href="{% url 'contactapp:team' %}">Team</a>
                                     <!-- <ul class="submenu">
                                         <li><a href="team.html">Team</a></li>
                                         <li><a href="team-details.html">Team Details</a></li>
@@ -59,7 +59,7 @@
                                         <li><a href="blog-details.html">Blog Details</a></li>
                                     </ul>
                                 </li> -->
-                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="{% url 'contactapp:contact' %}">Contact</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -67,7 +67,7 @@
                 <div class="col-xl-5 col-lg-3 col-6 d-flex align-items-center justify-content-end">
                     <div class="header-right">
                         <div class="header-btn f-right d-none d-lg-block">
-                            <a class="thm-btn thm-btn-2" href="#">admission now</a>
+                            <a class="thm-btn thm-btn-2" href="{% url 'contactapp:contact' %}">admission now</a>
                         </div>
                         <div class="search-box f-right d-none d-xl-block">
                             <form action="#">
@@ -96,45 +96,10 @@
         <!-- side-mobile-menu start -->
         <nav class="side-mobile-menu">
             <ul id="mobile-menu-active">
-                <li class="dropdown"><a href="index.html">Home</a>
-                    <ul class="sub-menu">
-                        <li><a href="index.html">Home One</a></li>
-                        <li><a href="index-2.html">Home Two</a></li>
-                    </ul>
-                </li>
+                <li class="dropdown"><a href="index.html">Home</a> </li>
                 <li><a href="about.html">About</a></li>
-                <li class="dropdown"><a href="classes.html">Classes</a>
-                    <ul class="sub-menu">
-                        <li><a href="classes.html">Classes</a></li>
-                        <li><a href="class-details.html">Class Details</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="team.html">Team</a>
-                    <ul class="sub-menu">
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="team-details.html">Team Details</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="#">Pages</a>
-                    <ul class="sub-menu">
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="classes.html">Classes</a></li>
-                        <li><a href="class-details.html">Class Details</a></li>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="team-details.html">Team Details</a></li>
-                        <li><a href="features.html">Features</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="blog-details.html">Blog Details</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="blog.html">Blog</a>
-                    <ul class="sub-menu">
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="blog-details.html">Blog Details</a></li>
-                    </ul>
-                </li>
+                <li class="dropdown"><a href="classes.html">Classes</a></li>
+                <li class="dropdown"><a href="team.html">Team</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>

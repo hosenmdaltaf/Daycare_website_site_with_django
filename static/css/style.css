@@ -1310,7 +1310,7 @@ label {
 	cursor: pointer;
 }
 /* 11. blog */
-.blog-area .section-title-2 {
+/* .blog-area .section-title-2 {
 	margin-bottom: 55px;
 }
 .blog-single {
@@ -1690,7 +1690,7 @@ label {
 	text-align: left;
 	font-size: 24px;
 	margin-bottom: 30px;
-}
+} */
 /* 12. footer */
 .footer-top .section-title {
 	margin-bottom: 0;
@@ -1851,7 +1851,7 @@ label {
 	padding-right: 50px;
 }
 /* 13. page title */
-.page-title-area {
+/* .page-title-area {
 	width: 100%;
 	height: 100%;
 	position: relative;
@@ -1862,10 +1862,12 @@ label {
 	position: absolute;
 	bottom: 0;
 	right: 18%;
-}
+} */
 .page-title h1 {
 	font-size: 70px;
 	text-transform: uppercase;
+	text-align: center;
+
 }
 .page-title h1 span {
 	color: #ff8000;
@@ -1962,7 +1964,7 @@ label {
 	border: 0;
 }
 /* 15. preloader  */
-.dark #preloader {
+/* .dark #preloader {
 	background-color: #232323;
 } 
 #preloader {
@@ -2026,4 +2028,4 @@ label {
 	  -webkit-transform: scale(1, 1);
 	  opacity: 0;
 	}
-}
+} */

@@ -1,12 +1,21 @@
 from django.shortcuts import render
+from classes.models import Services
+from contactapp.models import Contact
 
 def homepage(request):
-    return render(request,'homeapp/homepage.html')
+    services= Services.objects.all()
+    homeservices= Services.objects.all()[:3]
 
-    
-# from django.shortcuts import render
+    if request.method == "POST":
+        data = request.POST
+        if data['Servicesname'] != 'none':
+            Servicesname = Services.objects.get(id=data['Servicesname'])
+        else:
+            Servicesname = None
+        name = request.POST.get("name")
+        message = request.POST.get("message")
+        phonenumber = request.POST.get("phonenumber") 
+        Contact.objects.create(name=name,message=message,phonenumber=phonenumber,Servicesname=Servicesname)
+        return render(request,'homeapp/thankyou.html')
+    return render(request,'homeapp/homepage.html',{'services':services,'homeservices':homeservices})
 
-# def band_listing(request):
-#     """A view of all bands."""
-#     bands = models.Band.objects.all()
-#     return render(request, 'bands/band_listing.html', {'bands': bands})
