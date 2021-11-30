@@ -1,40 +1,36 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
 
-from .forms import ContactForm
-
-
-from django.views.generic.edit import CreateView
 from contactapp.models import Contact
+from classes.models import Services
 
-class ContactCreateView(CreateView):
-    model = Contact
-    fields = ['name','message','phonenumber', 'Servicesname']
-    template_name='homeapp/contactForm.html'
+from classes.sms import smsapi
 
-#   comments_form = ContactForm()   
-
-#     if request.method == 'POST': 
-#         comments_form = CommentForm(request.POST )  
-#         if comments_form.is_valid(): 
-#             comments_form.instance.created_by = request.user.profile
-#             comment = comments_form.save(commit=False)
-#             comment.post = details
-#             comments_form.save() 
-#             return redirect("user_feeds:articale-detail", id=post.id )  
-#         else: 
-#             comments_form = CommentForm() 
 
 def contact(request):
-    if request.method == "POST":
-        contact_form =ContactForm(request.POST)
-        if contact_form.is_valid():
-            contact_form.save()
-            return HttpResponseRedirect('/thanks/')
-        else:
-            contact_form=ContactForm()
+  
+    services= Services.objects.all()
 
-    return render(request,'contactapp/contact.html')
+    if request.method == "POST":
+        data = request.POST
+        if data['Servicesname'] != 'none':
+            Servicesname = Services.objects.get(id=data['Servicesname'])
+        else:
+            Servicesname = None
+        name = request.POST.get("name")
+        message = request.POST.get("message")
+        phonenumber = request.POST.get("phonenumber") 
+        Contact.objects.create(name=name,message=message,phonenumber=phonenumber,Servicesname=Servicesname)
+
+        msg = f"""
+        name: {name}.
+        message: {message}. 
+        phonenumber: {phonenumber}. 
+        Servicesname: {Servicesname}
+        """
+        receiver = '+8801880871297'
+        sms_status = smsapi(receiver, msg)
+        return render(request,'homeapp/thankyou.html')
+    return render(request,'contactapp/contact.html',{'services':services})
 
 
 def about(request):

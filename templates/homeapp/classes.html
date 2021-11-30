@@ -39,32 +39,35 @@
                             <img src="{{class.image.url}}" alt="image_not_found">
                         </div>
                         <div class="class-text">
-                            <a href="class-details.html"><h3>{{class.title}}</h3></a>
-                            <span>Class time {{class.out}} </span>
+                            <a href="{% url 'classes:services-detail' class.pk %}"><h3>{{class.title|truncatechars:30}}</h3></a>
+                            <span>Class time {{class.classtimestart}} - {{class.classtimefinish}} </span>
                             <p>{{class.content|truncatechars:100}}</p>
                         </div>
                         <ul class="schedule">
                             <li>
-                                <span>Class Size</span>
-                                <span>45 - 50</span>
+                                <span>Duration</span>
+                                <span>{{class.durationofclass}} Hours</span>
                             </li>
                             <li>
                                 <span>Years</span>
-                                <span>{{class.childagestart}}-{{class.childagefinish}}</span>
+                                <span>{{class.childagestart}} - {{class.childagefinish}}</span>
                             </li>
                             <li>
                                 <span>Tution Fee</span>
-                                <span>$120</span>
+                                <span>${{class.price}}</span>
                             </li>
                         </ul>
                     </div>
 
                       <!-- Button trigger modal --> 
-                <div class="box"> 
-                    <button class="trigger">
-                        <a    href="#popup1">Let me Pop up</a>
-                    </button>
-                </div>
+                <!-- <div class="box">  -->
+                    <!-- <button class="trigger"> -->
+                        <!-- <a  class="d-flex justify-content-center trigger mb-3"  href="#popup1">Click for register</a> -->
+                       
+                            <a class="thm-btn thm-btn-2 d-flex justify-content-center" href="#popup1">Click for register</a>
+                 
+                    <!-- </button> -->
+                <!-- </div> -->
                  <!-- Modal -->
                 <div id="popup1" class="overlay">
                     <div class="popup">

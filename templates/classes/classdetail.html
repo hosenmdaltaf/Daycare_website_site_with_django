@@ -1,0 +1,146 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+{% include 'homeapp/navbar.html' %}
+
+
+
+
+<main>
+
+
+    <!-- class details start -->
+    <section class="class details news-feeds-area pt-120 pb-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="class-dtls-wrapper news-wrapper mb-40">
+                        <article>
+                            <div class="single-news-post mb-30">
+                                <div class="post-thumb mb-30">
+                                    <img src="{{object.image.url}}" alt="image_not_found">
+                                </div>
+                                <div class="post-content class-detals">
+                                    <h4 class="post-title">{{object.title}}</h4>
+                                    <div class="text mb-30">
+                                        <p>{{object.content}}</p>
+                                    </div>
+                               
+                                </div>
+                            </div>
+                        </article>
+
+
+
+                        <!-- <div class="box"> 
+                            <button class="trigger">
+                                <a    href="#popup1">Click for register</a>
+                            </button>
+                        </div> -->
+                        <a class="thm-btn thm-btn-2 d-flex justify-content-center" href="#popup1">Click for register</a>
+                         <!-- Modal -->
+                        <div id="popup1" class="overlay">
+                            <div class="popup">
+                                <h2>Please fillup the form</h2>
+                                <a class="close" href="#">&times;</a>
+                                <div class="content">
+                                  
+                                    <form action="" method="POST" enctype="multipart/form-data">  
+                                        {% csrf_token %}    
+                                        <input name="name" type="text" class="feedback-input" placeholder="Name" />
+                                        <div class="dropdownbox ">
+                                            <select required name="Servicesname">
+                                              <option value='none'>Select one service</option>
+                                              {% for service in services %}
+                                              <option value='{{service.id}}'>{{service.title}}</option>
+                                              {% endfor %}
+                                            </select>
+                                          </div>
+                                        <input required name="phonenumber" type="text" class="feedback-input" placeholder="write your phone number" />
+                                        <textarea name="message" class="feedback-input" placeholder="write your query"></textarea>
+                                        <input type="submit" value="SUBMIT"/>
+                                      </form>
+        
+                                    </div> 
+        
+        
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <!-- <div class="widget mb-40">
+                        <div class="widget-search">
+                            <h3 class="widget-title">Search</h3>
+                            <form class="search-form" action="#">
+                                <input type="text" placeholder="Search">
+                                <button type="submit"><i class="ti-search"></i></button>
+                            </form>
+                        </div>
+                    </div> -->
+                    <div class="widget mb-40">
+                        <ul class="widget-wrapper class-info">
+
+                            <li><span>Years old :</span> {{object.childagestart}} - {{object.childagefinish}}</li>
+                            <!-- <li><span>Class Size :</span> 60 - 70 Kids</li> -->
+                            <li><span>Carry Time : </span> {{object.durationofclass}} Hours</li>
+                            <!-- <li><span>Couress Duraction :</span> 11 - 12 Month</li> -->
+                            <li><span>Class Time :</span> {{object.classtimestart}} - {{object.classtimefinish}}</li>
+                    
+                            <li><span>Tution Fee :</span> $ {{object.price}} </li>
+                        </ul>
+                    </div>
+
+
+
+                    <div class="widget mb-40">
+                        <h3 class="widget-title">Our similar services</h3>
+                        <ul class="post">
+                          
+                      {% for latestclass in latest %}
+                            <li class="d-flex align-items-center">
+                               
+                                <div class="widget-post-content">
+                                    <a href="blog-details.html">{{latestclass.title|truncatechars:30}}</a>
+                                    <div class="widget-posts-meta">Years old :{{latestclass.childagestart}} - {{latestclass.childagefinish}}</div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+     
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- class details end -->
+</main>
+
+
+
+
+{% include 'homeapp/footer.html' %}
+
+{% endblock %}

@@ -76,17 +76,23 @@
         <div class="row">
             <div class="col-12">
                 <div class="contact-form gray-bg mb-40">
-                    <form action="#">
+                    <form action="" method="POST" enctype="multipart/form-data">  
+                        {% csrf_token %} 
                         <div class="row">
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="Your Name">
-                            </div>
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="Your Mail">
+                            <div class="col-lg-12">
+                                <input name="name" type="text" placeholder="Enter Your Name">
                             </div>
                             <div class="col-lg-12">
-                                <input type="text" placeholder="Enter Your Subject">
+                                <input required name="phonenumber" type="text" placeholder="Enter Your phone number">
                             </div>
+                            <div class="dropdownbox ">
+                                <select required name="Servicesname">
+                                  <option value='none'>Select one service</option>
+                                  {% for service in services %}
+                                  <option value='{{service.id}}'>{{service.title}}</option>
+                                  {% endfor %}
+                                </select>
+                              </div>
                             <div class="col-lg-12">
                                 <textarea name="message" cols="30" rows="10" placeholder="Your Massage"></textarea>
                                 <div class="contact-form-btn text-center">
