@@ -37,4 +37,4 @@ def about(request):
     return render(request,'contactapp/about.html')
 
 def team(request):
-    return render(request,'contactapp/team.html')
+    return render(request,'contactapp/gallery.html')

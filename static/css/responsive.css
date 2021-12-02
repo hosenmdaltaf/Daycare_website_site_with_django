@@ -64,7 +64,8 @@
         right: 5%;
     }
     .logo img {
-        width: 160px;
+        /* width: 160px; */
+        max-width: 100px;
     }
 
 }
@@ -75,8 +76,13 @@
     .header-space, .banner-space {
         padding: 0 10px;
     }
+    .logo{
+        text-align: center;
+    }
     .logo img {
-        max-width: 140px;
+        /* max-width: 140px; */
+        max-width: 100px;
+        
     }
     .main-menu .menu li {
         margin-right: 25px;

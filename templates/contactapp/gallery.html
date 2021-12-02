@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+{% include 'homeapp/navbar.html' %}
+
+
+
+<main>
+
+
+       <!-- gallery start -->
+       <section class="gallery-area pt-120 pb-90">
+        <div class="container">
+            <!-- <div class="row text-center">
+                <div class="col-12">
+                    <div class="gallery-menu mb-50">
+                        <button class="active" data-filter="*">see all</button>
+                        <button data-filter=".cat1">Play</button>
+                        <button data-filter=".cat2">Drawing</button>
+                        <button data-filter=".cat3">Care</button>
+                    </div>
+                </div>
+            </div> -->
+            <div class="row grid text-center">
+                <div class="col-lg-4 col-md-6 grid-item mb-30 cat1 ">
+                    <div class="gallery">
+                        <div class="gallery-thumb">
+                            <img src="{% static 'img/gallery/galleryim1.jpeg' %}" alt="image_not_found">
+                        </div>
+                      
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6 grid-item mb-30 cat3 cat2 cat1">
+                    <div class="gallery">
+                        <div class="gallery-thumb">
+                            <img src="{% static 'img/gallery/gellarystudy.jpeg' %}" alt="image_not_found">
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 grid-item mb-30 cat4 cat5 cat2">
+                    <div class="gallery">
+                        <div class="gallery-thumb">
+                            <img src="{% static 'img/gallery/galleryplay.jpeg' %}" alt="image_not_found">
+                        </div>
+                      
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 grid-item mb-30 cat3 cat5 cat4 cat1">
+                    <div class="gallery">
+                        <div class="gallery-thumb">
+                            <img src="{% static 'img/gallery/galleryplay (2).jpeg' %}" alt="image_not_found">
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 grid-item mb-30 cat1 cat3 cat4">
+                    <div class="gallery">
+                        <div class="gallery-thumb">
+                            <img src="{% static 'img/gallery/CHILD.jpeg' %}" alt="image_not_found">
+                        </div>
+                      
+                    </div>
+                </div>
+              
+                <div class="col-lg-4 col-md-6 grid-item mb-30 cat4 cat5 cat2">
+                    <div class="gallery">
+                        <div class="gallery-thumb">
+                            <img src="{% static 'img/gallery/galleryim3.jpeg' %}" alt="image_not_found">
+                        </div>
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- gallery end -->
+</main>
+   
+{% include 'homeapp/footer.html' %}
+
+{% endblock %}
