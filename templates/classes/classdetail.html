@@ -91,22 +91,14 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <!-- <div class="widget mb-40">
-                        <div class="widget-search">
-                            <h3 class="widget-title">Search</h3>
-                            <form class="search-form" action="#">
-                                <input type="text" placeholder="Search">
-                                <button type="submit"><i class="ti-search"></i></button>
-                            </form>
-                        </div>
-                    </div> -->
+                  
                     <div class="widget mb-40">
                         <ul class="widget-wrapper class-info">
 
                             <li><span>Years old :</span> {{object.childagestart}} - {{object.childagefinish}}</li>
-                            <!-- <li><span>Class Size :</span> 60 - 70 Kids</li> -->
+                 
                             <li><span>Carry Time : </span> {{object.durationofclass}} Hours</li>
-                            <!-- <li><span>Couress Duraction :</span> 11 - 12 Month</li> -->
+                 
                             <li><span>Class Time :</span> {{object.classtimestart}} - {{object.classtimefinish}}</li>
                     
                             <li><span>Tution Fee :</span> $ {{object.price}} </li>
@@ -123,7 +115,7 @@
                             <li class="d-flex align-items-center">
                                
                                 <div class="widget-post-content">
-                                    <a href="blog-details.html">{{latestclass.title|truncatechars:30}}</a>
+                                    <a href="{% url 'classes:services-detail' latestclass.pk %}">{{latestclass.title|truncatechars:30}}</a>
                                     <div class="widget-posts-meta">Years old :{{latestclass.childagestart}} - {{latestclass.childagefinish}}</div>
                                 </div>
                             </li>
