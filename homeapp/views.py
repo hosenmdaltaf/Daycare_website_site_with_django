@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from classes.models import Services
+from homeapp.models import  Slider
 from contactapp.models import Contact
 
 from classes.sms import smsapi
@@ -28,4 +29,11 @@ def homepage(request):
         sms_status = smsapi(receiver, msg)
         return render(request,'homeapp/thankyou.html')
     return render(request,'homeapp/homepage.html',{'services':services,'homeservices':homeservices})
+
+def sliderpage(request):
+    sliders=Slider.objects.all()
+    return render(request,'homeapp/header.html',{'sliders':sliders})
+
+
+
 

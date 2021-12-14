@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 from contactapp.models import Contact
 from classes.models import Services
+from homeapp.models import Gallery
 
 from classes.sms import smsapi
 
@@ -37,4 +38,6 @@ def about(request):
     return render(request,'contactapp/about.html')
 
 def team(request):
-    return render(request,'contactapp/gallery.html')
+    gallerys = Gallery.objects.all()
+    return render(request,'contactapp/gallery.html',{'gallerys':gallerys})
+
