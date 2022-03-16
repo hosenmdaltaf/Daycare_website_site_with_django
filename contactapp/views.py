@@ -29,7 +29,7 @@ def contact(request):
         """
         receiver = '+8801880871297'
         sms_status = smsapi(receiver, msg)
-        return render(request,'homeapp/thankyou.html')
+        return render(request,'global/thankyou.html')
     return render(request,'contactapp/contact.html',{'services':services})
 
 

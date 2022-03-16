@@ -1,0 +1,92 @@
+
+{% load static %}
+
+{% block content %}
+     <!-- footer start -->
+     <footer>
+        <div class="footer-area gray-bg">
+ 
+            <div class="footer-bottom pt-40 pb-50">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-md-6">
+                            <div class="footer-left-widget mb-40">
+                                <!-- footer-logo -->
+                                <div class="logo">
+                                    <img src="{% static 'img/logo/logo.png' %}" alt="logo_not_found">
+                                </div>
+                             
+                                <p>The Little Campus is a private Early Education & Daycare Centre located in Dhanmondi.  We offer premium, high-end childcare services — that is, a personalized daycare with highly trained educators and a teaching approach that puts your child’s health and well-being first
+                                    </p>
+                                <div class="footer-social mt-30">
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                    <a href="#"><i class="fab fa-youtube"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-md-6 pr-0">
+                            <div class="footer-widget link mb-40">
+                                <h3>Event Activities</h3>
+                                <ul class="footer-link">
+                                    <li><a href="{% url 'classes:homepage' %}">Home</a></li>
+                                    <li><a href="{% url 'contactapp:about' %}">About</a></li>
+                                    <li><a href="{% url 'classes:classes' %}">Classes</a></li>
+                                    <li><a href="{% url 'contactapp:team' %}">Team</a></li>
+                                    <li><a href="{% url 'contactapp:contact' %}">Contact</a></li>
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-md-6 pr-0">
+                            <div class="footer-widget footer-widget-space mb-40">
+                                <h3>Contact With US</h3>
+                                <ul class="footer-info">
+                                    <li>
+                                        <div class="footer-address">
+                                            <span><i class="fas fa-map-marker-alt"></i></span>
+                                            <p>রোড নং ৯/এ, মিনা বাজারের পেছনে, বাসা নং- ৫৭,  ২ সি,  ধানমন্ডি।</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="footer-address">
+                                            <span><i class="fas fa-phone-alt"></i></span>
+                                            <p>01799384087</p>
+                                       
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="footer-address">
+                                            <span><i class="fas fa-envelope-open-text"></i></span>
+                                            <p>afruzahappy@gmail.com</p>
+                                           
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area pt-20 pb-20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="copyright-text text-center">
+                            <p>Copyright &copy; 2021. All Right Reserved/ By <a href="#">Happys baby day care.</a></p>
+                        </div>
+                        <div class="copyright-text text-center">
+                            <p>Design and developed by: <a href="https://www.dhakasolution.com/">Dhaka solution</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+
+{% endblock %}

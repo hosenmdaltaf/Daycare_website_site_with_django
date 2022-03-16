@@ -1,0 +1,67 @@
+
+{% load static %}
+
+
+{% block content %}
+
+<!-- 
+  header start -->
+  <header>
+    <div class="header-area header-space pl-100 pr-100">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-xl-2 col-lg-2 col-6">
+                    <div class="logo">
+                        <a href="{% url 'classes:homepage' %}"><img src="{% static 'img/logo/logo.png' %}" alt="logo_not_found"></a>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-7 d-none d-lg-block">
+                    <div class="main-menu">
+                        <nav id="mobile-menu">
+                            <ul class="menu">
+                                <li><a class="active" href="{% url 'classes:homepage' %}">Home</a></li>
+                                <li><a href="{% url 'contactapp:about' %}">About</a></li>
+                                <li><a href="{% url 'classes:classes' %}">Services</a></li>
+                                <li><a href="{% url 'contactapp:team' %}">Gallery</a> </li>
+                                <li><a href="{% url 'contactapp:contact' %}">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-3 col-6 d-flex align-items-center justify-content-end">
+                    <div class="header-right">
+                        <div class="header-btn f-right d-none d-lg-block">
+                            <a class="thm-btn thm-btn-2" href="{% url 'contactapp:contact' %}">admission now</a>
+                        </div>
+                       
+                        <!-- <div class="hamburger-menu d-lg-none">
+                            <a href="javascript:void(0);" class="">
+                                <i class="fas fa-bars"></i>
+                            </a>
+                        </div>  -->
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header end -->
+
+        <!-- side-mobile-menu start -->
+        <nav class="side-mobile-menu">
+            <ul id="mobile-menu-active">
+                <li class="dropdown"><a href="{% url 'classes:homepage' %}">Home</a> </li>
+                <li><a href="{% url 'contactapp:about' %}">About</a></li>
+                <li class="dropdown"><a href="{% url 'classes:classes' %}">Services</a></li>
+                <li class="dropdown"><a href="{% url 'contactapp:team' %}">Gallery</a></li>
+                <li><a href="{% url 'contactapp:contact' %}">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- side-mobile-menu end -->
+    </aside>
+    <!-- <div class="body-overlay"></div> -->
+    <!-- slide-bar end -->
+
+
+
+
+{% endblock %}
