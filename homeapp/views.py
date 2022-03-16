@@ -1,15 +1,14 @@
 from django.shortcuts import render
-
-from contactapp.models import Contact
 from classes.models import Services
-from homeapp.models import Gallery
-
+from homeapp.models import  Slider
+from contactapp.models import Contact
 from classes.sms import smsapi
 
 
-def contact(request):
-  
+def homepage(request):
     services= Services.objects.all()
+    homeservices= Services.objects.all()[:3]
+    sliders=Slider.objects.all()
 
     if request.method == "POST":
         data = request.POST
@@ -21,7 +20,6 @@ def contact(request):
         message = request.POST.get("message")
         phonenumber = request.POST.get("phonenumber") 
         Contact.objects.create(name=name,message=message,phonenumber=phonenumber,Servicesname=Servicesname)
-
         msg = f"""
         name: {name}.
         message: {message}. 
@@ -30,14 +28,11 @@ def contact(request):
         """
         receiver = '+8801880871297'
         sms_status = smsapi(receiver, msg)
-        return render(request,'global/thankyou.html')
-    return render(request,'contactapp/contact.html',{'services':services})
+        return render(request,'homeapp/thankyou.html')
+    return render(request,'homeapp/homepage.html',{'services':services,'homeservices':homeservices,'sliders':sliders})
 
 
-def about(request):
-    return render(request,'contactapp/about.html')
 
-def team(request):
-    gallerys = Gallery.objects.all()
-    return render(request,'contactapp/gallery.html',{'gallerys':gallerys})
+
+
 
