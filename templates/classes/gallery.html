@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<main>
+
+
+       <!-- gallery start -->
+       <section class="gallery-area pt-60 pb-60">
+        <div class="container">
+ 
+            <div class="row grid text-center">
+             
+           {% for img in gallerys %}
+                <div class="col-lg-4 col-md-6 grid-item mb-30 cat3 cat5 cat4 cat1">
+                    <div class="gallery">
+                        <div class="gallery-thumb">
+                            <img src="{{img.image.url}}" alt="image_not_found">
+                        </div>
+                        
+                    </div>
+                </div>
+            {% endfor %}
+              
+           
+            </div>
+        </div>
+    </section>
+    <!-- gallery end -->
+</main>
+   
+
+{% endblock %}

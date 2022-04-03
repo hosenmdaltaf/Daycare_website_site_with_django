@@ -31,12 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-
-    'contactapp.apps.ContactappConfig',
     'classes.apps.ClassesConfig',
-
-    'crispy_forms',
-
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -46,7 +41,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-CRISPY_TEMPLATE_PACK = 'bootstrap'
 
 
 MIDDLEWARE = [

@@ -46,14 +46,16 @@
                                     <form action="" method="POST" enctype="multipart/form-data">  
                                         {% csrf_token %}    
                                         <input name="name" type="text" class="feedback-input" placeholder="Name" />
-                                        <div class="dropdownbox ">
-                                            <select required name="Servicesname">
-                                              <option value='none'>Select one service</option>
-                                              {% for service in services %}
-                                              <option value='{{service.id}}'>{{service.title}}</option>
-                                              {% endfor %}
-                                            </select>
-                                          </div>
+
+                                      <div class="dropdownbox ">
+                                    <select required name="Servicesname"> 
+                                      <option value='none'>Select one service</option>
+                                      {% for service in all_service %}
+                                      <option value='{{service.id}}'>{{service.category}}</option>
+                                      {% endfor %}
+                                    </select>
+                                  </div>
+
                                         <input required name="phonenumber" type="text" class="feedback-input" placeholder="write your phone number" />
                                         <textarea name="message" class="feedback-input" placeholder="write your query"></textarea>
                                         <input type="submit" value="SUBMIT"/>

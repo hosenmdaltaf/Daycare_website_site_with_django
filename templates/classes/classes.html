@@ -12,8 +12,9 @@
         <div class="row align-items-center">
             <div class="col-lg-6 col-md-8 col-sm-12">
                 <div class="section-title section-title-2 wow fadeInUp" data-wow-delay=".2s">
-                    <h2>Our Popular Services</h2>
-                    <p> 👶We give babies and toddlers every opportunity to satisfy their curiosity about the world around them while preparing preschoolers for school and life — all in a caring, safe, fulfilling environment.
+                    <h2>Why Happys Baby Daycare</h2>
+                    <p> 
+                        Every child is different. So it is very important to understand the attitude and behavior of each child. Different child needs different type of handling. To ensure the baby's speech, food, good behavior, rest and finally the safety and development of the baby is our main target. Food: Most babies are reluctant to eat. Many mothers do not understand how to feed the baby due to inadequate experience. We are very proficient in that case Behavior: - Of course, every child should be trained on how to play with everyone without dispute. At the same time, they should be taught self-respect and morality. They should be taught the application of saying sorry, sharing, appreciating others and basic decency. Sleep: - We ensure that the child gets enough rest to be cheerfully throughout the day.Speech: Nowadays most of the children are late to talk, at home there is not much option to socialize or interact. In the daycare they can socialize and talk freely.
                     </p>
                 </div>
             </div>
@@ -79,14 +80,19 @@
                             <form action="" method="POST" enctype="multipart/form-data">  
                                 {% csrf_token %}    
                                 <input name="name" type="text" class="feedback-input" placeholder="Name" />
-                                <div class="dropdownbox ">
-                                    <select required name="Servicesname">
+                             
+                                  <div class="dropdownbox ">
+                                    <select required name="Servicesname"> 
                                       <option value='none'>Select one service</option>
-                                      {% for service in services %}
-                                      <option value='{{service.id}}'>{{service.title}}</option>
+                                      {% for service in all_service %}
+                                      <option value='{{service.id}}'>{{service.category}}</option>
                                       {% endfor %}
                                     </select>
                                   </div>
+    
+
+                                  
+                                <input  name="nid" type="text" class="feedback-input" placeholder="write your NID Number" />
                                 <input required name="phonenumber" type="text" class="feedback-input" placeholder="write your phone number" />
                                 <textarea name="message" class="feedback-input" placeholder="write your query"></textarea>
                                 <input type="submit" value="SUBMIT"/>

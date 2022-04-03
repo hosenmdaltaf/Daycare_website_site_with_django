@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+   <!-- contact info start -->
+   <section class="contact-info-area fix pt-60 pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-4 col-lg-5">
+                <div class="contact-box-wrapper">
+                    <div class="single-contact mb-30">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email Adress</h4>
+                            <p>afruzahappy@gmail.com</p>
+                          
+                        </div>
+                    </div>
+                    <div class="single-contact mb-30">
+                        <div class="contact-icon contact-icon-2">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone Number</h4>
+                            <p>01799384087</p>
+                            
+                        </div>
+                    </div>
+                    <div class="single-contact mb-30">
+                        <div class="contact-icon contact-icon-3">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Our Location</h4>
+                            <p>Road no 9/a,behind star kabab, house no-85,Dhanmondi, Dhaka-1209</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-7 offset-xl-1 col-lg-7">
+                <!-- contact form start -->
+<section class="contact-form-area pb-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="contact-form gray-bg mb-40">
+                    <form action="" method="POST" enctype="multipart/form-data">  
+                        {% csrf_token %} 
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <input required name="name" type="text" placeholder="Enter Your Name">
+                            </div>
+                            <div class="col-lg-12">
+                                <input required name="phonenumber" type="text" placeholder="Enter Your phone number">
+                            </div>
+                            <div class="col-lg-12">
+                                <input  name="nid" type="text" placeholder="Enter Your NID number">
+                            </div>
+                      
+                            <div class="dropdownbox ">
+                                <select required name="Servicesname"> 
+                                  <option value='none'>Select one service</option>
+                                  {% for service in all_service %}
+                                  <option value='{{service.id}}'>{{service.category}}</option>
+                                  {% endfor %}
+                                </select>
+                              </div>
+
+
+                            <div class="col-lg-12">
+                                <textarea name="message" cols="30" rows="10" placeholder="Your Massage"></textarea>
+                                <div class="contact-form-btn text-center">
+                                    <button class="thm-btn thm-btn-2" type="submit">Send Message</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact form end -->          
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact info end -->
+
+<div class="container">
+    <div class="row">
+        <div class="contact-map ml-1">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.969133357773!2d90.36665201438834!3d23.748480094767903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755bf4e60ea5fd1%3A0x223491983c6fbaff!2sRd%20No%209A%2C%20Dhaka%201205!5e0!3m2!1sen!2sbd!4v1639473225593!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+    </div>
+</div>
+
+</main>
+
+
+{% endblock %}

@@ -4,9 +4,9 @@
 
 {% block content %}
 
+{% include 'classes/header.html' %}
 
-<<<<<<< HEAD:templates/classes/homepage.html
-<main> 
+{% comment %} <main> 
     <!-- banner start -->
     <section class="banner-area banner-space pl-100 pr-100 fix">
         <div class="hero-bg-image d-flex align-items-center banner-height" data-background="{% static 'img/bg/banner-bg-01.jpg' %}">
@@ -19,7 +19,7 @@
                                 👶Social and emotional learning. Physical and mental health. Our very own early literacy program. And an overall focus on safety and support.  That’s HBDC.
                             </p>
                             <div class="banner-btn">
-                                <a class="thm-btn wow fadeInLeft" data-wow-delay=".8s" href="{% url 'contactapp:about' %}">Learn More</a>
+                                <a class="thm-btn wow fadeInLeft" data-wow-delay=".8s" href="{% url 'classes:about' %}">Learn More</a>
                                 <a class="thm-btn thm-btn-3 wow fadeInRight" data-wow-delay="1s" href="{% url 'classes:classes' %}">Our Class</a>
                             </div>
                         </div>
@@ -41,23 +41,13 @@
             </div>
         </div>
     </section>
-</main>
+</main> {% endcomment %}
     <!-- banner end -->
     <!-- pink-slider -->
-    
-    {% include 'classes/classes.html' %}
     {% include 'classes/aboutus.html' %}
-    {% include 'classes/features.html' %}
-=======
-    {% include 'homeapp/navbar.html' %}
-    {% include 'homeapp/header.html' %}
-    {% include 'homeapp/classes.html' %}
-    {% include 'homeapp/aboutus.html' %}
-    {% include 'homeapp/features.html' %}
-    
-    {% include 'homeapp/footer.html' %}
+    {% include 'classes/classes.html' %}
 
->>>>>>> 6060399aee3f5cc95e9e724886b55cfeadbd0ef2:templates/homeapp/homepage.html
+    {% include 'classes/features.html' %}
 
 
 {% endblock %}
